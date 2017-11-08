@@ -1,11 +1,3 @@
-" A sensible vimrc for Go development
-"
-" Please note that the following settings are some default that I used
-" for years. However it might be not the case for you (and your
-" environment). I highly encourage to change/adapt the vimrc to your own
-" needs. Think of a vimrc as a garden that needs to be maintained and fostered
-" throughout years. Keep it clean and useful - Fatih Arslan
-
 call plug#begin()
 Plug 'fatih/vim-go'
 Plug 'fatih/molokai'
@@ -56,7 +48,18 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set ruler                       " Show column and line number at the status bar
-set statusline+=%F              " Show full path
+
+" customize status line
+set statusline=
+set statusline+=%*\[%n]                                    "buffernr
+set statusline+=%*\ %<%F\                                  "File+path
+set statusline+=%*\ %y\                                    "FileType
+set statusline+=%*\ %{''.(&fenc!=''?&fenc:&enc).''}        "Encoding
+set statusline+=%*\ %{(&bomb?\",BOM\":\"\")}\              "Encoding2
+set statusline+=%*\ %{&ff}\                                "FileFormat (dos/unix..)
+set statusline+=%*\ %=\ r:%l/%L\                           "Rownumber
+set statusline+=%*\ c:%c\                                "Colnr
+set statusline+=%*\ \ %m%r%w\ %P\ \                        "Modified? Readonly? Top/bot.
 
 set foldmethod=syntax
 set foldlevel=100
