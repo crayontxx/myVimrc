@@ -115,6 +115,8 @@ map <Right> <Nop>
 " Center on current line after navigation
 nnoremap j jzz
 nnoremap k kzz
+nnoremap n nzz
+nnoremap N Nzz
 
 " Act like D and C
 nnoremap Y y$
