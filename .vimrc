@@ -117,6 +117,12 @@ nnoremap j jzz
 nnoremap k kzz
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap gg ggzz
+
+" Center on current line after bookmark navigation
+for i in split('abcdefghijklmnopqrstuvwxyz', '\zs')
+    execute printf("nnoremap '%s '%szz", i, i)
+endfor
 
 " Act like D and C
 nnoremap Y y$
